@@ -78,49 +78,34 @@ CMakeFiles/CubeEmulator.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CubeEmulator.dir/main.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\deofr\C++\CubeEmulator\main.cpp -o CMakeFiles\CubeEmulator.dir\main.cpp.s
 
-CMakeFiles/CubeEmulator.dir/Cube.cpp.obj: CMakeFiles/CubeEmulator.dir/flags.make
-CMakeFiles/CubeEmulator.dir/Cube.cpp.obj: ../Cube.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\deofr\C++\CubeEmulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CubeEmulator.dir/Cube.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\CubeEmulator.dir\Cube.cpp.obj -c C:\Users\deofr\C++\CubeEmulator\Cube.cpp
+CMakeFiles/CubeEmulator.dir/Skeleton.cpp.obj: CMakeFiles/CubeEmulator.dir/flags.make
+CMakeFiles/CubeEmulator.dir/Skeleton.cpp.obj: ../Skeleton.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\deofr\C++\CubeEmulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CubeEmulator.dir/Skeleton.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\CubeEmulator.dir\Skeleton.cpp.obj -c C:\Users\deofr\C++\CubeEmulator\Skeleton.cpp
 
-CMakeFiles/CubeEmulator.dir/Cube.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CubeEmulator.dir/Cube.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\deofr\C++\CubeEmulator\Cube.cpp > CMakeFiles\CubeEmulator.dir\Cube.cpp.i
+CMakeFiles/CubeEmulator.dir/Skeleton.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CubeEmulator.dir/Skeleton.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\deofr\C++\CubeEmulator\Skeleton.cpp > CMakeFiles\CubeEmulator.dir\Skeleton.cpp.i
 
-CMakeFiles/CubeEmulator.dir/Cube.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CubeEmulator.dir/Cube.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\deofr\C++\CubeEmulator\Cube.cpp -o CMakeFiles\CubeEmulator.dir\Cube.cpp.s
-
-CMakeFiles/CubeEmulator.dir/Solver.cpp.obj: CMakeFiles/CubeEmulator.dir/flags.make
-CMakeFiles/CubeEmulator.dir/Solver.cpp.obj: ../Solver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\deofr\C++\CubeEmulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CubeEmulator.dir/Solver.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\CubeEmulator.dir\Solver.cpp.obj -c C:\Users\deofr\C++\CubeEmulator\Solver.cpp
-
-CMakeFiles/CubeEmulator.dir/Solver.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CubeEmulator.dir/Solver.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\deofr\C++\CubeEmulator\Solver.cpp > CMakeFiles\CubeEmulator.dir\Solver.cpp.i
-
-CMakeFiles/CubeEmulator.dir/Solver.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CubeEmulator.dir/Solver.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\deofr\C++\CubeEmulator\Solver.cpp -o CMakeFiles\CubeEmulator.dir\Solver.cpp.s
+CMakeFiles/CubeEmulator.dir/Skeleton.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CubeEmulator.dir/Skeleton.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\deofr\C++\CubeEmulator\Skeleton.cpp -o CMakeFiles\CubeEmulator.dir\Skeleton.cpp.s
 
 # Object files for target CubeEmulator
 CubeEmulator_OBJECTS = \
 "CMakeFiles/CubeEmulator.dir/main.cpp.obj" \
-"CMakeFiles/CubeEmulator.dir/Cube.cpp.obj" \
-"CMakeFiles/CubeEmulator.dir/Solver.cpp.obj"
+"CMakeFiles/CubeEmulator.dir/Skeleton.cpp.obj"
 
 # External object files for target CubeEmulator
 CubeEmulator_EXTERNAL_OBJECTS =
 
 CubeEmulator.exe: CMakeFiles/CubeEmulator.dir/main.cpp.obj
-CubeEmulator.exe: CMakeFiles/CubeEmulator.dir/Cube.cpp.obj
-CubeEmulator.exe: CMakeFiles/CubeEmulator.dir/Solver.cpp.obj
+CubeEmulator.exe: CMakeFiles/CubeEmulator.dir/Skeleton.cpp.obj
 CubeEmulator.exe: CMakeFiles/CubeEmulator.dir/build.make
 CubeEmulator.exe: CMakeFiles/CubeEmulator.dir/linklibs.rsp
 CubeEmulator.exe: CMakeFiles/CubeEmulator.dir/objects1.rsp
 CubeEmulator.exe: CMakeFiles/CubeEmulator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\deofr\C++\CubeEmulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable CubeEmulator.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\deofr\C++\CubeEmulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable CubeEmulator.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\CubeEmulator.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

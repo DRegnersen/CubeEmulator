@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CubeEmulator.dir/Cube.cpp.obj"
-  "CMakeFiles/CubeEmulator.dir/Solver.cpp.obj"
+  "CMakeFiles/CubeEmulator.dir/Skeleton.cpp.obj"
   "CMakeFiles/CubeEmulator.dir/main.cpp.obj"
   "CubeEmulator.exe"
   "CubeEmulator.exe.manifest"

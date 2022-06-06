@@ -3,4 +3,4 @@ project(CubeEmulator)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(CubeEmulator main.cpp Cube.cpp Cube.h Solver.cpp Solver.h)
+add_executable(CubeEmulator main.cpp Skeleton.cpp Skeleton.h)

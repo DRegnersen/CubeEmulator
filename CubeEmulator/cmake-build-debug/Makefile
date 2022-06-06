@@ -128,53 +128,29 @@ CubeEmulator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CubeEmulator.dir\build.make CMakeFiles/CubeEmulator.dir/build
 .PHONY : CubeEmulator/fast
 
-Cube.obj: Cube.cpp.obj
-.PHONY : Cube.obj
+Skeleton.obj: Skeleton.cpp.obj
+.PHONY : Skeleton.obj
 
 # target to build an object file
-Cube.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CubeEmulator.dir\build.make CMakeFiles/CubeEmulator.dir/Cube.cpp.obj
-.PHONY : Cube.cpp.obj
+Skeleton.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CubeEmulator.dir\build.make CMakeFiles/CubeEmulator.dir/Skeleton.cpp.obj
+.PHONY : Skeleton.cpp.obj
 
-Cube.i: Cube.cpp.i
-.PHONY : Cube.i
-
-# target to preprocess a source file
-Cube.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CubeEmulator.dir\build.make CMakeFiles/CubeEmulator.dir/Cube.cpp.i
-.PHONY : Cube.cpp.i
-
-Cube.s: Cube.cpp.s
-.PHONY : Cube.s
-
-# target to generate assembly for a file
-Cube.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CubeEmulator.dir\build.make CMakeFiles/CubeEmulator.dir/Cube.cpp.s
-.PHONY : Cube.cpp.s
-
-Solver.obj: Solver.cpp.obj
-.PHONY : Solver.obj
-
-# target to build an object file
-Solver.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CubeEmulator.dir\build.make CMakeFiles/CubeEmulator.dir/Solver.cpp.obj
-.PHONY : Solver.cpp.obj
-
-Solver.i: Solver.cpp.i
-.PHONY : Solver.i
+Skeleton.i: Skeleton.cpp.i
+.PHONY : Skeleton.i
 
 # target to preprocess a source file
-Solver.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CubeEmulator.dir\build.make CMakeFiles/CubeEmulator.dir/Solver.cpp.i
-.PHONY : Solver.cpp.i
+Skeleton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CubeEmulator.dir\build.make CMakeFiles/CubeEmulator.dir/Skeleton.cpp.i
+.PHONY : Skeleton.cpp.i
 
-Solver.s: Solver.cpp.s
-.PHONY : Solver.s
+Skeleton.s: Skeleton.cpp.s
+.PHONY : Skeleton.s
 
 # target to generate assembly for a file
-Solver.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CubeEmulator.dir\build.make CMakeFiles/CubeEmulator.dir/Solver.cpp.s
-.PHONY : Solver.cpp.s
+Skeleton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CubeEmulator.dir\build.make CMakeFiles/CubeEmulator.dir/Skeleton.cpp.s
+.PHONY : Skeleton.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -209,12 +185,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... CubeEmulator
-	@echo ... Cube.obj
-	@echo ... Cube.i
-	@echo ... Cube.s
-	@echo ... Solver.obj
-	@echo ... Solver.i
-	@echo ... Solver.s
+	@echo ... Skeleton.obj
+	@echo ... Skeleton.i
+	@echo ... Skeleton.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

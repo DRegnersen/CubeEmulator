@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector>
 
+const std::string INITIAL = "WWWWWWWWWYYYYYYYYYBBBBBBBBBGGGGGGGGGRRRRRRRRROOOOOOOOO";
+
 enum Color {
     White = 0, Yellow = 1, Blue = 2, Green = 3, Red = 4, Orange = 5
 };
@@ -18,7 +20,11 @@ public:
 
     std::vector<Color> &operator[](const int &face_index);
 
+    int check_deviation();
+
     void execute(std::string line);
+
+    std::vector<std::string> get_history();
 
     void left_forward();
 
@@ -64,6 +70,11 @@ public:
 
     void rotate_down();
 
+    void rotate_x();
+
+    void rotate_y();
+
+    void topple_z();
 protected:
     Color char_to_color(const char &color);
 
@@ -81,6 +92,7 @@ protected:
 
 private:
     std::vector<std::vector<Color>> stickers_;
+    std::vector<std::string> history_;
 };
 
 

@@ -6,15 +6,25 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/deofr/C++/CubeEmulator/Cube.cpp
-sstream
--
-Cube.h
-C:/Users/deofr/C++/CubeEmulator/Cube.h
-
 C:/Users/deofr/C++/CubeEmulator/Cube.h
 iostream
 -
 vector
 -
+
+C:/Users/deofr/C++/CubeEmulator/Solver.h
+limits
+-
+Cube.h
+C:/Users/deofr/C++/CubeEmulator/Cube.h
+
+C:/Users/deofr/C++/CubeEmulator/main.cpp
+iostream
+-
+random
+-
+Cube.h
+C:/Users/deofr/C++/CubeEmulator/Cube.h
+Solver.h
+C:/Users/deofr/C++/CubeEmulator/Solver.h
 

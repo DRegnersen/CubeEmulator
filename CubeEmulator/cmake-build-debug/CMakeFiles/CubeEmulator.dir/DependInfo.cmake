@@ -8,8 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/deofr/C++/CubeEmulator/Cube.cpp" "C:/Users/deofr/C++/CubeEmulator/cmake-build-debug/CMakeFiles/CubeEmulator.dir/Cube.cpp.obj"
-  "C:/Users/deofr/C++/CubeEmulator/Solver.cpp" "C:/Users/deofr/C++/CubeEmulator/cmake-build-debug/CMakeFiles/CubeEmulator.dir/Solver.cpp.obj"
+  "C:/Users/deofr/C++/CubeEmulator/Skeleton.cpp" "C:/Users/deofr/C++/CubeEmulator/cmake-build-debug/CMakeFiles/CubeEmulator.dir/Skeleton.cpp.obj"
   "C:/Users/deofr/C++/CubeEmulator/main.cpp" "C:/Users/deofr/C++/CubeEmulator/cmake-build-debug/CMakeFiles/CubeEmulator.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

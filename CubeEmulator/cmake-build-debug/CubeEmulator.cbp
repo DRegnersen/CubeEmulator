@@ -82,16 +82,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/deofr/C++/CubeEmulator/Cube.cpp">
+		<Unit filename="C:/Users/deofr/C++/CubeEmulator/Skeleton.cpp">
 			<Option target="CubeEmulator"/>
 		</Unit>
-		<Unit filename="C:/Users/deofr/C++/CubeEmulator/Cube.h">
-			<Option target="CubeEmulator"/>
-		</Unit>
-		<Unit filename="C:/Users/deofr/C++/CubeEmulator/Solver.cpp">
-			<Option target="CubeEmulator"/>
-		</Unit>
-		<Unit filename="C:/Users/deofr/C++/CubeEmulator/Solver.h">
+		<Unit filename="C:/Users/deofr/C++/CubeEmulator/Skeleton.h">
 			<Option target="CubeEmulator"/>
 		</Unit>
 		<Unit filename="C:/Users/deofr/C++/CubeEmulator/main.cpp">

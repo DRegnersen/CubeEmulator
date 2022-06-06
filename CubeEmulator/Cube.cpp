@@ -14,12 +14,37 @@ Cube::Cube(std::string stickers) {
         }
         stickers_.push_back(face);
     }
+
+    rotate_left();
 }
 
-Cube::Cube(const Cube &other) : stickers_(other.stickers_) {}
+Cube::Cube(const Cube &other) {
+    for (int i = 0; i < 6; i++) {
+        std::vector<Color> face;
+        for (int j = 0; j < 9; j++) {
+            face.push_back(other.stickers_[i][j]);
+        }
+        stickers_.push_back(face);
+    }
+
+    for(const auto& line: other.history_){
+        history_.push_back(line);
+    }
+}
 
 Cube &Cube::operator=(const Cube &other) {
-    stickers_ = other.stickers_;
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 9; j++) {
+            stickers_[i][j] = other.stickers_[i][j];
+        }
+    }
+
+    history_.clear();
+
+    for(const auto& line: other.history_){
+        history_.push_back(line);
+    }
+
     return *this;
 }
 
@@ -195,15 +220,15 @@ void Cube::back_double() {
 }
 
 void Cube::rotate_left() {
-    top_clockwise();
-    down_clockwise();
-    clockwise_layer_shift(1);
-}
-
-void Cube::rotate_right() {
     top_anticlockwise();
     down_anticlockwise();
     anticlockwise_layer_shift(1);
+}
+
+void Cube::rotate_right() {
+    top_clockwise();
+    down_clockwise();
+    clockwise_layer_shift(1);
 }
 
 void Cube::rotate_up() {
@@ -218,7 +243,37 @@ void Cube::rotate_down() {
     clockwise_ring_shift(1);
 }
 
+void Cube::rotate_x() {
+    rotate_down();
+}
+
+void Cube::rotate_y() {
+    rotate_right();
+}
+
+void Cube::topple_z() {
+    rotate_left();
+    rotate_down();
+    rotate_right();
+}
+
+int Cube::check_deviation() {
+    int result = 0;
+
+    for (int face = 0; face < 6; face++) {
+        for (int block = 0; block < 9; block++) {
+            if (stickers_[face][block] != stickers_[face][4]) {
+                result++;
+            }
+        }
+    }
+
+    return result;
+}
+
 void Cube::execute(std::string line) {
+    history_.push_back(line);
+
     std::stringstream moves;
     moves << line;
 
@@ -289,13 +344,52 @@ void Cube::execute(std::string line) {
             clockwise_ring_shift(1);
             rotate_left();
         } else if (current_move == "x") {
-            rotate_down();
+            rotate_x();
+        } else if (current_move == "x'") {
+            for (int i = 0; i < 3; i++) {
+                rotate_x();
+            }
+        } else if (current_move == "x2") {
+            rotate_x();
+            rotate_x();
         } else if (current_move == "y") {
-            rotate_right();
+            rotate_y();
+        } else if (current_move == "y'") {
+            for (int i = 0; i < 3; i++) {
+                rotate_y();
+            }
+        } else if (current_move == "y2") {
+            rotate_y();
+            rotate_y();
         } else if (current_move == "z") {
-            rotate_left();
-            rotate_down();
-            rotate_right();
+            topple_z();
+        } else if (current_move == "z'") {
+            for (int i = 0; i < 3; i++) {
+                topple_z();
+            }
+        } else if (current_move == "z2") {
+            topple_z();
+            topple_z();
         }
     }
+}
+
+std::vector<std::string> Cube::get_history() {
+    std::vector<std::string> result;
+
+    if (!history_.empty()) {
+        result.push_back(history_[0]);
+
+        std::string algorithm;
+        for (int i = 1; i < history_.size(); i++) {
+            if (i != 1) {
+                algorithm += " ";
+            }
+            algorithm += history_[i];
+        }
+
+        result.push_back(algorithm);
+    }
+
+    return result;
 }
