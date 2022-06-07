@@ -1,6 +1,19 @@
+#include <set>
 #include <sstream>
 
 #include "Cube.h"
+
+Cube::Cube() {
+    for (int i = 0; i < 6; i++) {
+        std::vector<Color> face;
+        for (int j = 0; j < 9; j++) {
+            face.push_back(char_to_color(INITIAL[i * 9 + j]));
+        }
+        blocks_.push_back(face);
+    }
+
+    rotate_left();
+}
 
 Cube::Cube(std::string stickers) {
     if (stickers.length() != 6 * 9) {
@@ -457,4 +470,95 @@ std::vector<std::string> Cube::scan() {
     result.push_back(empty_line);
 
     return result;
+}
+
+bool Cube::check_validity() {
+    std::vector<int> color_numbers(6);
+    std::set<Color> centers;
+
+    for (int i = 0; i < 6; i++) {
+        centers.insert(blocks_[i][4]);
+
+        for (int j = 0; j < 9; j++) {
+            color_numbers[blocks_[i][j]]++;
+        }
+    }
+
+    if (centers.size() != 6) {
+        return false;
+    }
+
+    for (auto value: color_numbers) {
+        if (value != 9) {
+            return false;
+        }
+    }
+
+    return check_corners() && check_middles();
+}
+
+bool Cube::check_corners() {
+    std::vector<std::set<Color>> acceptable_corners = {{White,  Red,    Blue},
+                                                       {White,  Orange, Blue},
+                                                       {Yellow, Orange, Blue},
+                                                       {Red,    Blue,   Yellow},
+                                                       {White,  Orange, Green},
+                                                       {Orange, Green,  Yellow},
+                                                       {Green,  Yellow, Red},
+                                                       {White,  Red,    Green}};
+
+    std::vector<std::set<Color>> given_corners = {{blocks_[3][8], blocks_[4][6], blocks_[1][0]},
+                                                  {blocks_[3][2], blocks_[4][0], blocks_[0][6]},
+                                                  {blocks_[0][8], blocks_[4][2], blocks_[2][0]},
+                                                  {blocks_[1][2], blocks_[4][8], blocks_[2][6]},
+                                                  {blocks_[5][2], blocks_[1][8], blocks_[2][8]},
+                                                  {blocks_[5][0], blocks_[1][6], blocks_[3][6]},
+                                                  {blocks_[3][0], blocks_[0][0], blocks_[5][6]},
+                                                  {blocks_[2][2], blocks_[0][2], blocks_[5][8]}};
+
+    for (const auto &gc: given_corners) {
+        bool is_found = false;
+
+        for (const auto &ac: acceptable_corners) {
+            if (gc == ac) {
+                is_found = true;
+                break;
+            }
+        }
+
+        if (!is_found) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+bool Cube::check_middles() {
+    std::vector<std::set<Color>> unacceptable_middles = {{Yellow, White},
+                                                         {Blue,   Green},
+                                                         {Orange, Red}};
+
+    std::vector<std::set<Color>> given_middles = {{blocks_[4][1], blocks_[0][7]},
+                                                  {blocks_[4][5], blocks_[2][3]},
+                                                  {blocks_[4][7], blocks_[1][1]},
+                                                  {blocks_[4][3], blocks_[3][5]},
+                                                  {blocks_[1][3], blocks_[3][7]},
+                                                  {blocks_[1][7], blocks_[5][1]},
+                                                  {blocks_[1][5], blocks_[2][7]},
+                                                  {blocks_[3][1], blocks_[0][3]},
+                                                  {blocks_[3][3], blocks_[5][3]},
+                                                  {blocks_[2][1], blocks_[0][5]},
+                                                  {blocks_[2][5], blocks_[5][5]},
+                                                  {blocks_[0][1], blocks_[5][7]}};
+
+    for (const auto &gm: given_middles) {
+        for (const auto &um: unacceptable_middles) {
+            if (gm == um) {
+                return false;
+            }
+        }
+    }
+
+    return true;
 }

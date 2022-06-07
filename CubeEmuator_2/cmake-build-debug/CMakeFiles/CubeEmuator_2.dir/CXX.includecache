@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 C:/Users/deofr/C++/CubeEmuator_2/Cube.cpp
+set
+-
 sstream
 -
 Cube.h
@@ -17,4 +19,28 @@ iostream
 -
 vector
 -
+
+C:/Users/deofr/C++/CubeEmuator_2/Solver.cpp
+fstream
+-
+algorithm
+-
+random
+-
+Solver.h
+C:/Users/deofr/C++/CubeEmuator_2/Solver.h
+
+C:/Users/deofr/C++/CubeEmuator_2/Solver.h
+limits
+-
+Cube.h
+C:/Users/deofr/C++/CubeEmuator_2/Cube.h
+
+C:/Users/deofr/C++/CubeEmuator_2/main.cpp
+iostream
+-
+Cube.h
+C:/Users/deofr/C++/CubeEmuator_2/Cube.h
+Solver.h
+C:/Users/deofr/C++/CubeEmuator_2/Solver.h
 

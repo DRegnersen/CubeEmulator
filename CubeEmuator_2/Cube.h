@@ -13,6 +13,8 @@ enum Color {
 
 class Cube {
 public:
+    Cube();
+
     Cube(std::string stickers);
 
     Cube(const Cube &other);
@@ -22,6 +24,8 @@ public:
     std::vector<Color> &operator[](const int &face_index);
 
     std::vector<std::string> scan();
+
+    bool check_validity();
 
     int check_deviation();
 
@@ -81,6 +85,10 @@ public:
 
 protected:
     Color char_to_color(const char &color);
+
+    bool check_corners();
+
+    bool check_middles();
 
     void clockwise_ring_shift(const int &column_no);
 

@@ -8,7 +8,7 @@
 const int VITAL_CYCLES_NUMBER = 50;
 const int MAX_GENERATIONS_NUMBER = 300;
 const int POPULATION_SIZE = 500;
-const int IN_TOP_NUMBER = 10;
+const int IN_TOP_NUMBER = 50;
 
 bool compare_cubes(Cube c1, Cube c2);
 
@@ -17,6 +17,8 @@ public:
     Solver(std::string scrambler);
 
     std::string solve_as_God();
+
+    Cube get_solved_cube();
 
     void apply_relocator();
 
@@ -32,6 +34,7 @@ protected:
     std::string get_random_toppling();
 
 private:
+    Cube solved_;
     std::string scrambler_;
     std::vector<std::string> relocations_;
     std::vector<std::string> moves_;

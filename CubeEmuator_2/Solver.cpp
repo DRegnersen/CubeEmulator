@@ -91,6 +91,7 @@ std::string Solver::solve_as_God() {
 
             for (int i = 0; i < population.size(); i++) {
                 if (population[i].check_deviation() == 0) {
+                    solved_ = population[i];
                     return population[i].get_history()[1];
                 }
 
@@ -125,4 +126,8 @@ std::string Solver::solve_as_God() {
     }
 
     throw std::logic_error("Solution was not found");
+}
+
+Cube Solver::get_solved_cube() {
+    return solved_;
 }
