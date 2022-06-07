@@ -8,12 +8,12 @@ void Renderer::set_width(const int &width) {
     width_ = width;
 }
 
-// ■
-
 void Renderer::visualize_cube() {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     std::vector<int> palette = {15, 14, 9, 10, 12, 13};
     std::vector<int> indexes = {5, 0, 4, 1};
+
+    std::cout << std::endl;
 
     for (int i = 0; i < 4; i++) {
         if (indexes[i] == 4) {
@@ -68,4 +68,7 @@ void Renderer::visualize_cube() {
             }
         }
     }
+
+    std::cout << std::endl;
+    SetConsoleTextAttribute(hConsole, 7);
 }

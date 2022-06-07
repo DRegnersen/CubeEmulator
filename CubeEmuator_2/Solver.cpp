@@ -70,7 +70,7 @@ std::string Solver::get_random_toppling() {
     return topplings_[get_random_of(0, topplings_.size() - 1)];
 }
 
-std::string Solver::solve_as_God() {
+std::string Solver::solve_genetically() {
     for (int cycle = 0; cycle < VITAL_CYCLES_NUMBER; cycle++) {
         std::vector<Cube> population;
 
@@ -86,8 +86,6 @@ std::string Solver::solve_as_God() {
 
         for (int generation = 0; generation < MAX_GENERATIONS_NUMBER; generation++) {
             std::sort(population.begin(), population.end(), compare_cubes);
-
-            //std::cout << population[0].check_deviation() << std::endl;
 
             for (int i = 0; i < population.size(); i++) {
                 if (population[i].check_deviation() == 0) {
@@ -130,4 +128,14 @@ std::string Solver::solve_as_God() {
 
 Cube Solver::get_solved_cube() {
     return solved_;
+}
+
+Cube Solver::scramble(Cube cube) {
+    int scrambling_number = get_random_of(MAX_SCRAMBLING_NUMBER / 2, MAX_SCRAMBLING_NUMBER);
+
+    for (int i = 0; i < scrambling_number; i++) {
+        cube.execute(get_random_move());
+    }
+
+    return cube;
 }

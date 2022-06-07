@@ -27,7 +27,9 @@ public:
 
     void load();
 
-    std::vector<std::string> scan();
+    void clear();
+
+    void relabel(std::string stickers);
 
     bool check_validity();
 

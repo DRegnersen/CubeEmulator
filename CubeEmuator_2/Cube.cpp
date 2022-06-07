@@ -1,5 +1,6 @@
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 #include <set>
 
 #include "Cube.h"
@@ -388,6 +389,8 @@ void Cube::execute(std::string line) {
         } else if (current_move == "z2") {
             topple_z();
             topple_z();
+        } else {
+            std::cout << "\"" << current_move << "\" is not a move" << std::endl;
         }
     }
 }
@@ -408,67 +411,6 @@ std::vector<std::string> Cube::get_history() {
 
         result.push_back(algorithm);
     }
-
-    return result;
-}
-
-std::vector<std::string> Cube::scan() {
-    std::vector<std::string> result;
-    std::string empty_line;
-
-    for (int i = 0; i < SCAN_WIDTH; i++) {
-        empty_line += " ";
-    }
-
-    result.push_back(empty_line);
-
-    std::vector<int> indexes = {5, 0, 4, 1};
-
-    for (int i = 0; i < 4; i++) {
-        if (indexes[i] == 4) {
-            std::vector<int> wide_ring_indexes = {3, 4, 2};
-
-            for (int j = 0; j < 3; j++) {
-                std::string line;
-
-                for (int k = 0; k < (SCAN_WIDTH - 9) / 2; k++) {
-                    line += " ";
-                }
-
-                for (int k = 0; k < 3; k++) {
-                    for (int t = j * 3; t < j * 3 + 3; t++) {
-                        line += std::to_string(blocks_[wide_ring_indexes[k]][t]);
-                    }
-                }
-
-                for (int k = 0; k < (SCAN_WIDTH - 9) / 2; k++) {
-                    line += " ";
-                }
-
-                result.push_back(line);
-            }
-        } else {
-            for (int j = 0; j < 3; j++) {
-                std::string line;
-
-                for (int k = 0; k < (SCAN_WIDTH - 3) / 2; k++) {
-                    line += " ";
-                }
-
-                for (int k = j * 3; k < j * 3 + 3; k++) {
-                    line += std::to_string(blocks_[indexes[i]][k]);
-                }
-
-                for (int k = 0; k < (SCAN_WIDTH - 3) / 2; k++) {
-                    line += " ";
-                }
-
-                result.push_back(line);
-            }
-        }
-    }
-
-    result.push_back(empty_line);
 
     return result;
 }
@@ -577,6 +519,12 @@ void Cube::save() {
             }
             out << std::endl;
         }
+
+        out << history_.size() << std::endl;
+        for (auto script: history_) {
+            int n = std::count(script.begin(), script.end(), ' ') + 1;
+            out << n << ' ' << script << std::endl;
+        }
     }
 
     out.close();
@@ -593,7 +541,49 @@ void Cube::load() {
                 blocks_[i][j] = static_cast<Color>(sticker);
             }
         }
+
+        history_.clear();
+
+        int loading_history_size, n;
+        in >> loading_history_size;
+
+        for (int i = 0; i < loading_history_size; i++) {
+            std::string script, move;
+            in >> n;
+            for (int j = 0; j < n; j++) {
+                in >> move;
+                if (j != 0) {
+                    script += " ";
+                }
+                script += move;
+            }
+            history_.push_back(script);
+        }
     }
 
     in.close();
+}
+
+void Cube::clear() {
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 9; j++) {
+            blocks_[i][j] = char_to_color(INITIAL[i * 9 + j]);
+        }
+    }
+
+    history_.clear();
+}
+
+void Cube::relabel(std::string stickers) {
+    if (stickers.length() != 6 * 9) {
+        throw std::logic_error("'" + stickers + "' is not a scan");
+    }
+
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 9; j++) {
+            blocks_[i][j] = char_to_color(stickers[i * 9 + j]);
+        }
+    }
+
+    history_.clear();
 }

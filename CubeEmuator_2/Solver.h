@@ -5,6 +5,7 @@
 
 #include "Cube.h"
 
+const int MAX_SCRAMBLING_NUMBER = 12;
 const int VITAL_CYCLES_NUMBER = 50;
 const int MAX_GENERATIONS_NUMBER = 300;
 const int POPULATION_SIZE = 500;
@@ -16,7 +17,9 @@ class Solver {
 public:
     Solver(std::string scrambler);
 
-    std::string solve_as_God();
+    std::string solve_genetically();
+
+    Cube scramble(Cube cube);
 
     Cube get_solved_cube();
 
