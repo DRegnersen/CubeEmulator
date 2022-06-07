@@ -1,0 +1,8 @@
+7
+clear ; go back to the initial cube state ;
+shuffle ; shuffle the cube ;
+move ; enter a sequence of cube moves ;
+show ; visualize the current cube state ;
+solve ; solve the cube ;
+save ; save the current cube state used at the next run ;
+esc ; exit the program ;

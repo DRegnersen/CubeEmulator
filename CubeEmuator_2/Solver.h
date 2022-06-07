@@ -15,11 +15,13 @@ bool compare_cubes(Cube c1, Cube c2);
 
 class Solver {
 public:
+    Solver();
+
     Solver(std::string scrambler);
 
     std::string solve_genetically();
 
-    Cube scramble(Cube cube);
+    Cube shuffle(Cube cube);
 
     Cube get_solved_cube();
 

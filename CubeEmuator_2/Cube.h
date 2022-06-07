@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 
-const int SCAN_WIDTH = 11;
 const std::string INITIAL = "WWWWWWWWWYYYYYYYYYBBBBBBBBBGGGGGGGGGRRRRRRRRROOOOOOOOO";
 
 enum Color {

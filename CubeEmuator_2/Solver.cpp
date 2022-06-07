@@ -8,6 +8,16 @@ bool compare_cubes(Cube c1, Cube c2) {
     return c1.check_deviation() < c2.check_deviation();
 }
 
+Solver::Solver() {
+    scrambler_ = "";
+
+    moves_ = {"U", "U'", "U2", "D", "D'", "D2", "R", "R'", "R2", "L", "L'", "L2", "F", "F'", "F2", "B", "B'", "B2"};
+    rotations_ = {"x", "x'", "x2", "y", "y'", "y2"};
+    topplings_ = {"z", "z'", "z2"};
+
+    apply_relocator();
+}
+
 Solver::Solver(std::string scrambler) {
     scrambler_ = scrambler;
 
@@ -40,6 +50,8 @@ void Solver::apply_relocator() {
 
             relocations_.push_back(preset);
         }
+    } else {
+        throw std::logic_error("\"RELOCATOR.cube\" was removed");
     }
 
     in.close();
@@ -130,10 +142,10 @@ Cube Solver::get_solved_cube() {
     return solved_;
 }
 
-Cube Solver::scramble(Cube cube) {
-    int scrambling_number = get_random_of(MAX_SCRAMBLING_NUMBER / 2, MAX_SCRAMBLING_NUMBER);
+Cube Solver::shuffle(Cube cube) {
+    int shuffles_number = get_random_of(MAX_SCRAMBLING_NUMBER / 2, MAX_SCRAMBLING_NUMBER);
 
-    for (int i = 0; i < scrambling_number; i++) {
+    for (int i = 0; i < shuffles_number; i++) {
         cube.execute(get_random_move());
     }
 

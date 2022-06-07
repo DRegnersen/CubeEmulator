@@ -525,6 +525,8 @@ void Cube::save() {
             int n = std::count(script.begin(), script.end(), ' ') + 1;
             out << n << ' ' << script << std::endl;
         }
+    } else {
+        throw std::logic_error("\"SAVES.cube\" was removed");
     }
 
     out.close();
@@ -559,6 +561,8 @@ void Cube::load() {
             }
             history_.push_back(script);
         }
+    } else {
+        throw std::logic_error("\"SAVES.cube\" was removed");
     }
 
     in.close();

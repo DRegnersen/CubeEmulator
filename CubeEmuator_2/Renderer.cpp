@@ -1,3 +1,4 @@
+#include <fstream>
 #include <windows.h>
 
 #include "Renderer.h"
@@ -10,7 +11,7 @@ void Renderer::set_width(const int &width) {
 
 void Renderer::visualize_cube() {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    std::vector<int> palette = {15, 14, 9, 10, 12, 13};
+    std::vector<int> palette = {WHITE, YELLOW, BLUE, GREEN, RED, PURPLE};
     std::vector<int> indexes = {5, 0, 4, 1};
 
     std::cout << std::endl;
@@ -26,12 +27,12 @@ void Renderer::visualize_cube() {
 
                 for (int k = 0; k < 3; k++) {
                     if (k != 0) {
-                        SetConsoleTextAttribute(hConsole, 0);
+                        SetConsoleTextAttribute(hConsole, BLACK);
                         std::cout << "|";
                     }
                     for (int t = j * 3; t < j * 3 + 3; t++) {
                         if (t != j * 3) {
-                            SetConsoleTextAttribute(hConsole, 0);
+                            SetConsoleTextAttribute(hConsole, BLACK);
                             std::cout << "|";
                         }
                         SetConsoleTextAttribute(hConsole, palette[cube_[wide_ring_indexes[k]][t]]);
@@ -53,7 +54,7 @@ void Renderer::visualize_cube() {
 
                 for (int k = j * 3; k < j * 3 + 3; k++) {
                     if (k != j * 3) {
-                        SetConsoleTextAttribute(hConsole, 0);
+                        SetConsoleTextAttribute(hConsole, BLACK);
                         std::cout << "|";
                     }
                     SetConsoleTextAttribute(hConsole, palette[cube_[indexes[i]][k]]);
@@ -71,4 +72,49 @@ void Renderer::visualize_cube() {
 
     std::cout << std::endl;
     SetConsoleTextAttribute(hConsole, 7);
+}
+
+void Renderer::print_highlighted(const std::string &message, const int &color) {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, color);
+    std::cout << message;
+    SetConsoleTextAttribute(hConsole, 7);
+}
+
+void Renderer::print_info() {
+    std::ifstream in("INFO.cube");
+
+    if (in.good()) {
+        int notes_number;
+        in >> notes_number;
+
+        for (int i = 0; i < notes_number; i++) {
+            std::string note, sign, word;
+            std::cout << "* ";
+
+            in >> note;
+            print_highlighted(note, YELLOW);
+
+            in >> sign;
+            if (sign != ";") {
+                throw std::logic_error("\"INFO.cube\" was corrupted");
+            }
+
+            std::cout << " - ";
+
+            while (true) {
+                in >> word;
+                if (word == ";") {
+                    break;
+                }
+                std::cout << word << " ";
+            }
+
+            std::cout << std::endl;
+        }
+    } else {
+        throw std::logic_error("\"INFO.cube\" was removed");
+    }
+
+    in.close();
 }

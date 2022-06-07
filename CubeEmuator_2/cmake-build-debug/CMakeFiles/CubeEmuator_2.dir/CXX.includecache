@@ -6,15 +6,45 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/deofr/C++/CubeEmuator_2/Cube.cpp
+fstream
+-
+sstream
+-
+algorithm
+-
+set
+-
+Cube.h
+C:/Users/deofr/C++/CubeEmuator_2/Cube.h
+
 C:/Users/deofr/C++/CubeEmuator_2/Cube.h
 iostream
 -
 vector
 -
 
+C:/Users/deofr/C++/CubeEmuator_2/Renderer.cpp
+fstream
+-
+windows.h
+-
+Renderer.h
+C:/Users/deofr/C++/CubeEmuator_2/Renderer.h
+
 C:/Users/deofr/C++/CubeEmuator_2/Renderer.h
 Cube.h
 C:/Users/deofr/C++/CubeEmuator_2/Cube.h
+
+C:/Users/deofr/C++/CubeEmuator_2/Solver.cpp
+fstream
+-
+algorithm
+-
+random
+-
+Solver.h
+C:/Users/deofr/C++/CubeEmuator_2/Solver.h
 
 C:/Users/deofr/C++/CubeEmuator_2/Solver.h
 limits
