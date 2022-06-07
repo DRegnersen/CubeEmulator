@@ -1,3 +1,0 @@
-C:/Users/deofr/C++/CubeEmulator/cmake-build-debug/CMakeFiles/CubeEmulator.dir
-C:/Users/deofr/C++/CubeEmulator/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/deofr/C++/CubeEmulator/cmake-build-debug/CMakeFiles/rebuild_cache.dir

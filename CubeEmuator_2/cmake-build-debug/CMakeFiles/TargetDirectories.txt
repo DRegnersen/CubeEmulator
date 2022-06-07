@@ -1,0 +1,3 @@
+C:/Users/deofr/C++/CubeEmuator_2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/deofr/C++/CubeEmuator_2/cmake-build-debug/CMakeFiles/CubeEmuator_2.dir
+C:/Users/deofr/C++/CubeEmuator_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

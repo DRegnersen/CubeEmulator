@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/deofr/C++/CubeEmuator_2/Cube.cpp
+sstream
+-
+Cube.h
+C:/Users/deofr/C++/CubeEmuator_2/Cube.h
+
+C:/Users/deofr/C++/CubeEmuator_2/Cube.h
+iostream
+-
+vector
+-
+
