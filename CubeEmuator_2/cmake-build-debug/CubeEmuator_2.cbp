@@ -88,6 +88,12 @@
 		<Unit filename="C:/Users/deofr/C++/CubeEmuator_2/Cube.h">
 			<Option target="CubeEmuator_2"/>
 		</Unit>
+		<Unit filename="C:/Users/deofr/C++/CubeEmuator_2/Renderer.cpp">
+			<Option target="CubeEmuator_2"/>
+		</Unit>
+		<Unit filename="C:/Users/deofr/C++/CubeEmuator_2/Renderer.h">
+			<Option target="CubeEmuator_2"/>
+		</Unit>
 		<Unit filename="C:/Users/deofr/C++/CubeEmuator_2/Solver.cpp">
 			<Option target="CubeEmuator_2"/>
 		</Unit>

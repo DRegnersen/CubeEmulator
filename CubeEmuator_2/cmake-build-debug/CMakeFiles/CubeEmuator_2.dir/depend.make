@@ -4,11 +4,16 @@
 CMakeFiles/CubeEmuator_2.dir/Cube.cpp.obj: \
  ../Cube.cpp \
  ../Cube.h
+CMakeFiles/CubeEmuator_2.dir/Renderer.cpp.obj: \
+ ../Cube.h \
+ ../Renderer.cpp \
+ ../Renderer.h
 CMakeFiles/CubeEmuator_2.dir/Solver.cpp.obj: \
  ../Cube.h \
  ../Solver.cpp \
  ../Solver.h
 CMakeFiles/CubeEmuator_2.dir/main.cpp.obj: \
  ../Cube.h \
+ ../Renderer.h \
  ../Solver.h \
  ../main.cpp

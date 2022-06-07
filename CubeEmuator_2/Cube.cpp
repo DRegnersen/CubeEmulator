@@ -1,5 +1,6 @@
-#include <set>
+#include <fstream>
 #include <sstream>
+#include <set>
 
 #include "Cube.h"
 
@@ -561,4 +562,38 @@ bool Cube::check_middles() {
     }
 
     return true;
+}
+
+void Cube::save() {
+    std::ofstream out("SAVES.cube");
+
+    if (out.good()) {
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (j != 0) {
+                    out << " ";
+                }
+                out << blocks_[i][j];
+            }
+            out << std::endl;
+        }
+    }
+
+    out.close();
+}
+
+void Cube::load() {
+    std::ifstream in("SAVES.cube");
+
+    if (in.good()) {
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 9; j++) {
+                int sticker;
+                in >> sticker;
+                blocks_[i][j] = static_cast<Color>(sticker);
+            }
+        }
+    }
+
+    in.close();
 }

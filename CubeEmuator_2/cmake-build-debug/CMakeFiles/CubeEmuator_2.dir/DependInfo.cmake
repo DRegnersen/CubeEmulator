@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/deofr/C++/CubeEmuator_2/Cube.cpp" "C:/Users/deofr/C++/CubeEmuator_2/cmake-build-debug/CMakeFiles/CubeEmuator_2.dir/Cube.cpp.obj"
+  "C:/Users/deofr/C++/CubeEmuator_2/Renderer.cpp" "C:/Users/deofr/C++/CubeEmuator_2/cmake-build-debug/CMakeFiles/CubeEmuator_2.dir/Renderer.cpp.obj"
   "C:/Users/deofr/C++/CubeEmuator_2/Solver.cpp" "C:/Users/deofr/C++/CubeEmuator_2/cmake-build-debug/CMakeFiles/CubeEmuator_2.dir/Solver.cpp.obj"
   "C:/Users/deofr/C++/CubeEmuator_2/main.cpp" "C:/Users/deofr/C++/CubeEmuator_2/cmake-build-debug/CMakeFiles/CubeEmuator_2.dir/main.cpp.obj"
   )

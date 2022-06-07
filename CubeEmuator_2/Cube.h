@@ -23,6 +23,10 @@ public:
 
     std::vector<Color> &operator[](const int &face_index);
 
+    void save();
+
+    void load();
+
     std::vector<std::string> scan();
 
     bool check_validity();

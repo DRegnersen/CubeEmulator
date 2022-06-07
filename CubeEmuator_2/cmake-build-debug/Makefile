@@ -152,6 +152,30 @@ Cube.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CubeEmuator_2.dir\build.make CMakeFiles/CubeEmuator_2.dir/Cube.cpp.s
 .PHONY : Cube.cpp.s
 
+Renderer.obj: Renderer.cpp.obj
+.PHONY : Renderer.obj
+
+# target to build an object file
+Renderer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CubeEmuator_2.dir\build.make CMakeFiles/CubeEmuator_2.dir/Renderer.cpp.obj
+.PHONY : Renderer.cpp.obj
+
+Renderer.i: Renderer.cpp.i
+.PHONY : Renderer.i
+
+# target to preprocess a source file
+Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CubeEmuator_2.dir\build.make CMakeFiles/CubeEmuator_2.dir/Renderer.cpp.i
+.PHONY : Renderer.cpp.i
+
+Renderer.s: Renderer.cpp.s
+.PHONY : Renderer.s
+
+# target to generate assembly for a file
+Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CubeEmuator_2.dir\build.make CMakeFiles/CubeEmuator_2.dir/Renderer.cpp.s
+.PHONY : Renderer.cpp.s
+
 Solver.obj: Solver.cpp.obj
 .PHONY : Solver.obj
 
@@ -212,6 +236,9 @@ help:
 	@echo ... Cube.obj
 	@echo ... Cube.i
 	@echo ... Cube.s
+	@echo ... Renderer.obj
+	@echo ... Renderer.i
+	@echo ... Renderer.s
 	@echo ... Solver.obj
 	@echo ... Solver.i
 	@echo ... Solver.s

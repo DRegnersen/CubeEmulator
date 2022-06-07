@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/CubeEmuator_2.dir/Cube.cpp.obj"
+  "CMakeFiles/CubeEmuator_2.dir/Renderer.cpp.obj"
   "CMakeFiles/CubeEmuator_2.dir/Solver.cpp.obj"
   "CMakeFiles/CubeEmuator_2.dir/main.cpp.obj"
   "CubeEmuator_2.exe"
